@@ -1,4 +1,6 @@
-﻿using OSMMapLib;
+﻿
+   
+using OSMMapLib;
 using System;
 
 namespace OSMMap
@@ -7,23 +9,24 @@ namespace OSMMap
     {
         static void Main(string[] args)
         {
-            /*Tile tile = new Tile(1,5,7,"urlcka");
-            Console.WriteLine(tile.ToString());
+           
+        Map map = new Map();
+         map.Lat = 49.84335531583281;
+            map.Lon = 18.173273993447488;
+            map.Zoom = 17;  
+            
+            Layer layer1 = new Layer("https://cartodb-basemaps-{c}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png", 15, 1.0f);
+            Layer layer2 = new Layer("http://tile.memomaps.de/tilegen/{z}/{x}/{y}.png", 17, 0.2f);
 
-            Layer layer = new Layer();
-            Console.WriteLine(layer.MaxZoom);
-            Console.WriteLine(layer.UrlTemplate);
-            Console.WriteLine(layer.FormatUrl(tile.X, tile.Y, tile.Zoom));
+            map.Layer = new Layer[2];
+            map.Layer[0] = layer1;
+            map.Layer[1] = layer2;
+            
+            
 
-            Tile tile2 = layer[1, 5, 4];
-            Console.WriteLine(tile2.ToString());*/
+           
 
-            Map mapa = new Map();
-            mapa.Lat = 49.83148019813019;
-            mapa.Lon = 18.159852471293025; 
-            mapa.Zoom = 17;
-            mapa.Layer = new Layer("http://c.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg",17);
-            mapa.Render("fileName.png");
+            map.Render();
         }
     }
 }
